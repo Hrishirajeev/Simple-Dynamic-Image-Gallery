@@ -1,0 +1,185 @@
+#root {
+  width: 100%;
+  padding: 10px;
+}
+body {
+  background: rgba(240, 240, 240, 0.6);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h2,
+.card p {
+  margin: 10px 15px;
+}
+
+.navbar {
+  display: none;
+}
+.footer {
+  margin-top: 50px;
+  padding: 25px;
+  text-align: center;
+  background: #222;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    display: flex;
+    position: fixed;
+    left: 10px;
+    top: 2%;
+    height: 70vh;
+    width: 90px;
+
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+    z-index: 1000;
+  }
+}
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  .navbar a:hover {
+    color: #aaa;
+    transform: translateX(3px);
+  }
+
+  .add-image-btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 40px;
+  padding: 10px 20px;
+  background: #222;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-image-btn:hover {
+  background: #444;
+}
+
+.add-image-btn input {
+  display: none;
+}
+
+.card {
+  position: relative;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.delete-btn:hover {
+  background: red;
+}
+
+.about {
+  margin-top: 60px;
+  padding: 30px;
+  text-align: center;
+  background:#ddd
+}
+
+.about h2 {
+  margin-bottom: 15px;
+}
+
+.about p {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.hero {
+  text-align: center;
+  padding: 70px 20px 40px;
+  background: linear-gradient(135deg, #f5f7fa, #e8eef5, #fdfdfd);
+  background:
+    radial-gradient(circle at 20% 30%, rgba(150, 180, 255, 0.25), transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(255, 180, 200, 0.25), transparent 35%),
+    linear-gradient(135deg, #f5f7fa, #ffffff);
+
+  border-radius: 0 0 30px 30px;
+}
+
+.hero h1 {
+  margin: 0 0 15px;
+  font-size: 42px;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 18px;
+  color: #666;
+}
+
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
